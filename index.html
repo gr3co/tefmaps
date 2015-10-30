@@ -1,0 +1,64 @@
+<html>
+<head>
+    <style>
+        body {
+        	font-family:"Arial", Helvetica, sans-serif;
+        	color: #990000;
+        }
+        td {
+        	width:200px;
+        	height:100px;
+        	border: 1px solid black;
+        	text-align:center;
+        }
+        #blank {
+        	border: none;
+        }
+        #title {
+        	border: none;
+        	text-align:left;
+        }
+        a {
+            font-family:"Arial", Helvetica, sans-serif;
+            font-size:20px;
+            cursor:pointer;
+        }
+        a:link {
+            color: #990000;
+        }
+        a:visited {
+            color: #990000;
+        }
+        a:hover {
+            color: #990000;
+        }
+        a:active {
+            color: #999999;
+        }
+    </style>
+</head>
+<body>
+    <h1>TEF Cleaning Maps</h1>
+    Andrew ID: <input type="text" id="andrew"></br>
+    <a id="CFA">CFA</a> </br>
+    <a id="Cyert">Cyert</a> </br>
+    <a id="Baker">Baker</a> </br>
+    <a id="Wean">Wean</a> </br>
+    <a id="Hunt">Hunt</a>
+
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    <script>
+        $( "a" ).each(function( index ) {
+            var link = "/"+$( this ).attr("id");
+            $( this ).click(function(){
+                var v = $("#andrew").val();
+                $.post("/andrew", "andrew="+v+"&link="+link)
+                 .done(function(){
+                    window.location.href = link;
+                });
+            });
+        });
+    </script>
+</body>
+</html>

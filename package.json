@@ -1,0 +1,17 @@
+{
+  "name": "cleanmaps",
+  "version": "0.0.0",
+  "description": "cleaning maps for cmu clusters",
+  "main": "web.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "rachel",
+  "license": "BSD",
+  "dependencies": {
+    "express": "~4.13.3",
+    "logfmt": "~1.1.2",
+    "body-parser": "*"
+  }
+}
