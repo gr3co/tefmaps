@@ -43,7 +43,7 @@ app.get("/data", function(req, res){
 
 app.post("/data", function(req,res){
   var name = req.body.name;
-  if (name !== "blank") {
+  if (name !== "blank" && name !== "title") {
     data[name] = {}
     data[name].date = new Date();
     data[name].andrew = data.user.andrew
